@@ -1,13 +1,15 @@
 import React from 'react';
-import { noop } from 'lodash';
 import styled from 'styled-components';
 
 const Main = styled.div`
-  font-family: 'Nunito', sans-serif;
-  font-size: large;
+  font-family: 'Nunito', 'Noto Sans TC', sans-serif;
+  color: ${(props) => props.theme.blue};
+  font-size: 2.2em;
+  font-weight: 500;
+  padding-bottom: 20px;
 `;
 
-const Title = ({ children, onClick = noop, ...props }) => (
+const Title = ({ children, ...props }) => (
   <Main {...props}>
     {children}
   </Main>

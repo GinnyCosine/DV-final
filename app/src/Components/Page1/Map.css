@@ -1,17 +1,24 @@
 .react-svg-zoom-map {
   overflow: hidden;
-  width: 40%;
-  margin: 3%;
+  width: 40vw;
+  margin-left: 50px;
+  margin-right: 50px;
+  box-sizing: border-box;
 }
 
 .react-svg-zoom-map .map-item-path {
   fill: #f2ede4;
   stroke: #64512d;
   stroke-width: 0.8;
-  transition: fill 0.3s;
+  transition: all 0.3s;
   cursor: pointer;
 }
 
 .react-svg-zoom-map .map-item-path:hover {
   fill: #f2be5c;
+  transform: translate(-0.5%, 0.5%);
+}
+
+.map-path-select{
+  fill: #f2be5c !important;
 }
