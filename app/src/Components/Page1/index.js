@@ -21,20 +21,18 @@ const Description = styled.div`
   border-radius: 10px;
   padding: 10px;
   box-sizing: border-box;
-  border: solid 3px ${(props) => props.theme.gray};
+  border: solid 3px ${(props) => props.theme.lightGray};
 `;
 
 const ButtonWrapper = styled.div`
   display: flex;
 `;
 
-
-
 class Page extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
-        county: ""
+        county: "新竹市"
       }
     }
 
@@ -47,10 +45,8 @@ class Page extends React.Component {
         if (title.includes(newCounty)) {
           countyList[i].classList.add("map-path-select");
         }
-        else {
-          if (countyList[i].classList.contains("map-path-select")) {
-            countyList[i].classList.remove("map-path-select");
-          }
+        else if (countyList[i].classList.contains("map-path-select")) {
+          countyList[i].classList.remove("map-path-select");
         }
       }
     }

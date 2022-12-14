@@ -5,6 +5,7 @@ export default {
   lightGreen: '#daede2',
   background: '#f2ede4',
   white: '#ffffff',
-  gray: '#dedede',
-  black: '#000000'
+  lightGray: '#dedede',
+  black: '#000000',
+  gray: '#555757'
 };
