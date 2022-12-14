@@ -1,0 +1,8 @@
+{
+  "short_name": "DV Final Project",
+  "name": "Data Visualization Final Project",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
