@@ -15,7 +15,7 @@ const Main = styled.div`
   text-align: center;
   border-radius: 50%;
   background: ${(props) => props.theme.green};
-  opacity: 0.8;
+  opacity: 1;
   animation: fadeIn 0.3s;
   transition: opacity 0.4s;
   :hover{

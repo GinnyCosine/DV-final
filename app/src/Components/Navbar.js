@@ -9,6 +9,7 @@ const Navbar = styled.div`
   position: sticky;
   top: 0;
   left: 0;
+  z-index: 100;
 `;
 
 const StyledLink = styled(Link)`
@@ -36,8 +37,8 @@ class NavbarCustom extends PureComponent {
     return (
       <Navbar>
         <LinksWrapper>
-            <StyledLink to="/page1">Page 1</StyledLink>
-            <StyledLink to="/page2">Page 2</StyledLink>
+            <StyledLink to="/page1">Select By County</StyledLink>
+            <StyledLink to="/page2">Select By Multiple Fileds</StyledLink>
         </LinksWrapper>
       </Navbar>
     );

@@ -1546,6 +1546,11 @@
     "@jridgewell/resolve-uri" "3.1.0"
     "@jridgewell/sourcemap-codec" "1.4.14"
 
+"@kurkle/color@^0.3.0":
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/@kurkle/color/-/color-0.3.1.tgz#ef72bc8022ccf77cdd2715097f062ee591ec145c"
+  integrity sha512-hW0GwZj06z/ZFUW2Espl7toVDjghJN+EKqyXzPSV8NV89d5BYp5rRMBJoc+aUN0x5OXDMeRQHazejr2Xmqj2tw==
+
 "@leichtgewicht/ip-codec@^2.0.1":
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/@leichtgewicht/ip-codec/-/ip-codec-2.0.4.tgz#b2ac626d6cb9c8718ab459166d4bb405b8ffa78b"
@@ -2011,6 +2016,13 @@
   version "18.11.14"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-18.11.14.tgz#a8571b25f3a31e9ded14e3ab9488509adef831d8"
   integrity sha512-0KXV57tENYmmJMl+FekeW9V3O/rlcqGQQJ/hNh9r8pKIj304pskWuEd8fCyNT86g/TpO0gcOTiLzsHLEURFMIQ==
+
+"@types/papaparse@^5.3.1":
+  version "5.3.5"
+  resolved "https://registry.yarnpkg.com/@types/papaparse/-/papaparse-5.3.5.tgz#e5ad94b1fe98e2a8ea0b03284b83d2cb252bbf39"
+  integrity sha512-R1icl/hrJPFRpuYj9PVG03WBAlghJj4JW9Py5QdR8FFSxaLmZRyu7xYDCCBZIJNfUv3MYaeBbhBoX958mUTAaw==
+  dependencies:
+    "@types/node" "*"
 
 "@types/parse-json@^4.0.0":
   version "4.0.0"
@@ -3072,6 +3084,13 @@ char-regex@^2.0.0:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/char-regex/-/char-regex-2.0.1.tgz#6dafdb25f9d3349914079f010ba8d0e6ff9cd01e"
   integrity sha512-oSvEeo6ZUD7NepqAat3RqoucZ5SeqLJgOvVIwkafu6IP3V0pO38s/ypdVUmDDK6qIIHNlYHJAKX9E7R7HoKElw==
+
+chart.js@^4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/chart.js/-/chart.js-4.1.0.tgz#171af17142afdb5d43859676f8aad4751b70024c"
+  integrity sha512-Xta4vonV3e1pwFGLTyUMqXk2aH03D6253DSt52pdS7247u2SpIpQb6kCewxNgx1JfeLBUnjaxHYbHpOv6w78Og==
+  dependencies:
+    "@kurkle/color" "^0.3.0"
 
 check-types@^11.1.1:
   version "11.2.2"
@@ -6874,6 +6893,11 @@ p-try@^2.0.0:
   resolved "https://registry.yarnpkg.com/p-try/-/p-try-2.2.0.tgz#cb2868540e313d61de58fafbe35ce9004d5540e6"
   integrity sha512-R4nPAVTAU0B9D35/Gk3uJf/7XYbQcyohSKdvAxIRSNghFl4e71hVoGnBNQz9cWaXxO2I10KTC+3jMdvvoKw6dQ==
 
+papaparse@^5.3.1:
+  version "5.3.2"
+  resolved "https://registry.yarnpkg.com/papaparse/-/papaparse-5.3.2.tgz#d1abed498a0ee299f103130a6109720404fbd467"
+  integrity sha512-6dNZu0Ki+gyV0eBsFKJhYr+MdQYAzFUGlBMNj3GNrmHxmz1lfRa24CjFObPXtjcetlOv5Ad299MhIK0znp3afw==
+
 param-case@^3.0.4:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/param-case/-/param-case-3.0.4.tgz#7d17fe4aa12bde34d4a77d91acfb6219caad01c5"
@@ -7786,6 +7810,14 @@ react-is@^18.0.0:
   version "18.2.0"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-18.2.0.tgz#199431eeaaa2e09f86427efbb4f1473edb47609b"
   integrity sha512-xWGDIW6x921xtzPkhiULtthJHoJvBbF3q26fzloPCK0hsvxtPVelvftw3zjbHWSkR2km9Z+4uxbDDK/6Zw9B8w==
+
+react-papaparse@^4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/react-papaparse/-/react-papaparse-4.1.0.tgz#09e1cdae55a0f3e36650aaf7ff9bb5ee2aed164a"
+  integrity sha512-sGJqK+OE2rVVQPxQUCCDW2prLIglv9kTdizhNe2awXvKo0gLShmhpRN3BwA+ujw5M2gSJ/KGNEwtgII0OsLgkg==
+  dependencies:
+    "@types/papaparse" "^5.3.1"
+    papaparse "^5.3.1"
 
 react-refresh@^0.11.0:
   version "0.11.0"

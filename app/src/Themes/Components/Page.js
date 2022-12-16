@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Main = styled.div`
-  color: ${(props) => props.theme.textDark};
+  color: ${(props) => props.theme.black};
   padding-bottom: 100px;
   margin-right: auto;
   margin-left: auto;
