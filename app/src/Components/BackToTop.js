@@ -17,9 +17,13 @@ const Main = styled.div`
   background: ${(props) => props.theme.green};
   opacity: 1;
   animation: fadeIn 0.3s;
-  transition: opacity 0.4s;
+  transition: all 0.4s;
   :hover{
-    opacity: 0.8;
+    background: ${(props) => props.theme.lightGreen};
+  }
+
+  :hover i{
+    border-color: ${(props) => props.theme.green};
   }
   @keyframes fadeIn {
     0% {
@@ -48,9 +52,9 @@ const Wrapper = styled.div`
 const ScrollArrow = () => {
   const [showScroll, setShowScroll] = useState(false);
   const checkScrollTop = () => {
-    if (!showScroll && window.pageYOffset > 70) {
+    if (!showScroll && window.pageYOffset > 85) {
       setShowScroll(true);
-    } else if (showScroll && window.pageYOffset <= 70) {
+    } else if (showScroll && window.pageYOffset <= 85) {
       setShowScroll(false);
     }
   };

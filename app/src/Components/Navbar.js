@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import Link from '../Themes/Components/Link';
 
@@ -10,6 +10,12 @@ const Navbar = styled.div`
   top: 0;
   left: 0;
   z-index: 100;
+  transition: all 0.5s;
+  opacity: ${(props) => props.show ? 1 : 0.85};
+
+  :hover{
+    opacity: 1;
+  }
 `;
 
 const StyledLink = styled(Link)`
@@ -18,6 +24,7 @@ const StyledLink = styled(Link)`
   color: ${(props) => props.theme.lightGreen};
   flex: 1;
   padding: 0 20px;
+  font-weight: 500;
   
   :hover{
     color: ${(props) => props.theme.yellow};
@@ -32,17 +39,25 @@ const LinksWrapper = styled.div`
   padding: 15px 0px;
 `;
 
-class NavbarCustom extends PureComponent {
-  render() {
-    return (
-      <Navbar>
-        <LinksWrapper>
-            <StyledLink to="/page1">Select By County</StyledLink>
-            <StyledLink to="/page2">Select By Multiple Fileds</StyledLink>
-        </LinksWrapper>
-      </Navbar>
-    );
-  }
+const NavbarCustom = () => {
+  const [showBar, setShowBar] = useState(true);
+  const checkScrollTop = () => {
+    if (showBar && window.pageYOffset > 85) {
+      setShowBar(false);
+    } else if (!showBar && window.pageYOffset <= 85) {
+      setShowBar(true);
+    }
+  };
+  window.addEventListener('scroll', checkScrollTop);
+
+  return (
+    <Navbar show={showBar}>
+      <LinksWrapper>
+          <StyledLink to="/page1">Select By County</StyledLink>
+          <StyledLink to="/page2">Select By Multiple Features</StyledLink>
+      </LinksWrapper>
+    </Navbar>
+  );
 }
 
 
