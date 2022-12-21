@@ -178,7 +178,7 @@ const ChartShower = (props) => {
     }
   }
 
-  return <div/>
+  return <div style={{ width: "100%", textAlign: "center", color: "#2c3359" }}>Loading...</div>
 }
 
 export default ChartShower;
