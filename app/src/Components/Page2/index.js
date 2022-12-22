@@ -4,11 +4,11 @@ import "./page2.css";
 import Getdata from './Get_data';
 
 const Wrapper = styled.div`
-  display: flex;
   align-items: center;
   align-self: center;
   margin: auto;
-  padding-left: 80px;
+  padding: 5%;
+  box-sizing: border-box;
 `;
 
 const DescriptionWrapper = styled.div`
@@ -21,7 +21,7 @@ const DescriptionWrapper = styled.div`
 
 const Description = styled.div`
   width: 100%;
-    align-items: center;
+  align-items: center;
 `;
 
 const SelectBar = styled.div`
@@ -59,6 +59,23 @@ const SelectSliderItem = styled.div`
   top: 0;
   background: ${(props) => props.theme.green};
   transition: all 0.5s;
+`;
+
+const FilterItem = styled.div`
+  flex: 1;
+  padding: 0 20px;
+  span {
+    background-color: #f2be5c;
+    padding: 0 2px;
+    border-radius: 5px;
+    margin-right: 10px;
+  }
+`;
+
+const Arrow = styled.div`
+  flex: 0;
+  transform: translate(-3em, 0.2em);
+  z-index: 1;
 `;
 
 const month_options = [
@@ -120,77 +137,98 @@ class Page extends React.Component {
 
     return (
       <Description>
-       < Wrapper>
-      <div class="filter">
-          <select value={month} onChange={this.selectmonth}> 
-          {month_options.map((option) => (
-              <option value={option.value}> {option.label} </option>
-            ))}
-          </select> 
-           
-          <select value={cartype} onChange={this.selectcartype}>
-              <option value = "all">全部</option>
-              <option value = "機車">機車</option>
-              <option value = "小客車">小客車</option>
-              <option value = "大貨車">大貨車</option>
-              <option value = "曳引車">曳引車</option>
-              <option value = "半聯結車">半聯結車</option>
-          </select> 
-
-          <select value={accidenttype} onChange={this.selectaccidenttype}>
-              <option value = "all">全部</option>
-              <option value = "人與汽(機)車">人與汽機車</option>
-              <option value = "汽(機)車本身">汽機車本身</option>
-              <option value = "車與車">車與車</option>
-          </select> 
-          
-          <select value={weather} onChange={this.selectweather}>
-              <option value = "all">全部</option>
-              <option value = "晴">晴</option>
-              <option value = "雨">雨</option>
-              <option value = "陰">陰</option>
-              <option value = "霧或煙">霧或煙</option>
-              <option value = "風沙">風沙</option>
-              <option value = "暴雨">暴雨</option>
-          </select> 
+        <Wrapper>
+          <div style={{ display: "flex", width: "100%" }}>
+            <FilterItem><span></span>Month</FilterItem>
+            <FilterItem><span></span>Vehicle Type</FilterItem>
+            <FilterItem><span></span>Accident Type</FilterItem>
+            <FilterItem><span></span>Weather</FilterItem>
           </div>
-          </Wrapper>
-          < DescriptionWrapper>
+          <div class="filter">
+            <select value={month} onChange={this.selectmonth}> 
+              {month_options.map((option) => (
+                  <option value={option.value}> {option.label} </option>
+                ))}
+            </select>
+            <Arrow>
+              <span class="material-symbols-outlined">
+                arrow_drop_down
+              </span>
+            </Arrow>
+            <select value={cartype} onChange={this.selectcartype}>
+                <option value = "all">全部</option>
+                <option value = "機車">機車</option>
+                <option value = "小客車">小客車</option>
+                <option value = "大貨車">大貨車</option>
+                <option value = "曳引車">曳引車</option>
+                <option value = "半聯結車">半聯結車</option>
+            </select>
+            <Arrow>
+              <span class="material-symbols-outlined">
+                arrow_drop_down
+              </span>
+            </Arrow>
+            <select value={accidenttype} onChange={this.selectaccidenttype}>
+                <option value = "all">全部</option>
+                <option value = "人與汽(機)車">人與汽機車</option>
+                <option value = "汽(機)車本身">汽機車本身</option>
+                <option value = "車與車">車與車</option>
+            </select> 
+            <Arrow>
+              <span class="material-symbols-outlined">
+                arrow_drop_down
+              </span>
+            </Arrow>
+            <select value={weather} onChange={this.selectweather}>
+                <option value = "all">全部</option>
+                <option value = "晴">晴</option>
+                <option value = "雨">雨</option>
+                <option value = "陰">陰</option>
+                <option value = "霧或煙">霧或煙</option>
+                <option value = "風沙">風沙</option>
+                <option value = "暴雨">暴雨</option>
+            </select>
+            <Arrow>
+              <span class="material-symbols-outlined">
+                arrow_drop_down
+              </span>
+            </Arrow>
+          </div>
+        </Wrapper>
+        <DescriptionWrapper>
           <SelectBar>
-                    <SelectBarItem
-                      id="page2-heatmap-item"
-                      onClick={() => { this.selectChart("heatmap"); }}
-                    >
-                      Hours & Weekdays Type
-                    </SelectBarItem>
-                    <SelectBarItem
-                      id="page2-city-item"
-                      onClick={() => { this.selectChart("city"); }}
-                    >
-                      City Type
-                    </SelectBarItem>
+            <SelectBarItem
+              id="page2-heatmap-item"
+              onClick={() => { this.selectChart("heatmap"); }}
+            >
+              Hours & Weekdays Type
+            </SelectBarItem>
+            <SelectBarItem
+              id="page2-city-item"
+              onClick={() => { this.selectChart("city"); }}
+            >
+              City Type
+            </SelectBarItem>
 
-                    <SelectBarItem
-                      id="page2-age-item"
-                      onClick={() => { this.selectChart("age"); }}
-                    >
-                      Age
-                    </SelectBarItem>
-                    <SelectBarItem
-                      id="page2-sex-item"
-                      onClick={() => { this.selectChart("sex"); }}
-                    >
-                      Sex
-                    </SelectBarItem>
-                  </SelectBar>
-                  <SelectSlider id="page2-slider">
-                    <SelectSliderItem left={sliderLeft} />
-                  </SelectSlider>
-
-         <Getdata  month = {month} cartype = {cartype} accidenttype = {accidenttype} weather ={weather} chartType={chart} />
-         </ DescriptionWrapper>
+            <SelectBarItem
+              id="page2-age-item"
+              onClick={() => { this.selectChart("age"); }}
+            >
+              Age
+            </SelectBarItem>
+            <SelectBarItem
+              id="page2-sex-item"
+              onClick={() => { this.selectChart("sex"); }}
+            >
+              Sex
+            </SelectBarItem>
+          </SelectBar>
+          <SelectSlider id="page2-slider">
+            <SelectSliderItem left={sliderLeft} />
+          </SelectSlider>
+          <Getdata  month = {month} cartype = {cartype} accidenttype = {accidenttype} weather ={weather} chartType={chart} />
+        </DescriptionWrapper>
       </Description>  
-      
     );
   }
 }
