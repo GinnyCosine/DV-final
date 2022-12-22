@@ -28,7 +28,7 @@ class Footer extends PureComponent {
     return (
       <Wrapper>
         <TagWrapper>
-          <Tag>GROUP 12</Tag>
+          <Tag>Group 12</Tag>
           <Tag>宋沛潔</Tag>
           <Tag>簡妤璇</Tag>
           <Tag>張育誠</Tag>

@@ -28,3 +28,4 @@ Run on [http://localhost:3000](http://localhost:3000)
 - [styled-components](https://styled-components.com/)
     - for css
 - [Papa parse](https://react-papaparse.js.org/)
+    - for csv reading and parsing

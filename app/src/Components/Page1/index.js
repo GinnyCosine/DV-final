@@ -32,12 +32,14 @@ const SelectBar = styled.div`
 const SelectBarItem = styled.div`
   flex: 1;
   color: ${(props) => props.theme.green};
+  font-weight: ${(props) => props.select ? 700 : 500};
   font-size: 1em;
   text-align: center;
   cursor: pointer;
+  transition: all 0.5s;
+
   :hover{
     opacity: 0.8;
-    transition: all 0.3s;
   }
 `;
 
@@ -111,25 +113,28 @@ class Page extends React.Component {
                 <Description>
                   <SelectBar>
                     <SelectBarItem
+                      select={chart === "accidentType"}
                       id="page1-accidentType-item"
                       onClick={() => { this.selectChart("accidentType"); }}
                     >
                       Accident Type
                     </SelectBarItem>
                     <SelectBarItem
+                      select={chart === "carType"}
                       id="page1-carType-item"
                       onClick={() => { this.selectChart("carType"); }}
                     >
                       Vehicle Type
                     </SelectBarItem>
-
                     <SelectBarItem
+                      select={chart === "weather"}
                       id="page1-weather-item"
                       onClick={() => { this.selectChart("weather"); }}
                     >
                       Weather
                     </SelectBarItem>
                     <SelectBarItem
+                      select={chart === "age"}
                       id="page1-age-item"
                       onClick={() => { this.selectChart("age"); }}
                     >
