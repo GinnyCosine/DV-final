@@ -76,7 +76,7 @@ const CarTypeBarChart = (props) => {
         callbacks: {
           label: 
             function(context) {
-              const total = Number(context.formattedValue) + Number(context.formattedValue);
+              const total = data.death[context.dataIndex] + data.injury[context.dataIndex];
               if (context.datasetIndex > 0) {
                 return `Injury: ${context.formattedValue} / ${total}`;
               }
